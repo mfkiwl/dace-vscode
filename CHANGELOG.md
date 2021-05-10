@@ -2,6 +2,101 @@
 
 ## 0.2
 
+### 0.2.16
+
+- Switch to terminal mode by default for the dace daemon. This deprecates the
+  subprocess mode.
+
+### 0.2.12
+
+- Remove annoying popup notifications if the SDFG optimization panel isn't
+  open while viewing an SDFG.
+
+### 0.2.11
+
+- Various bugfixes and minor improvmenets.
+
+### 0.2.10
+
+- Provide interactive instrumentation of SDFGs.
+- Provide visualization of instrumentation reports on SDFGs.
+  - If a runtime report is generated, prompt the user to display it ontop of the 
+    currently active SDFG.
+- Provide running of SDFGs.
+  - Run SDFGs normally, or run with profiling - this runs N times and reports
+    the averate run-time (N is specified in the dace configurations).
+  - If no wrapper script (Python) was detected, a popup asks to provide one.
+    - Picked scripts are saved until the editor is disposed of.
+- Prompt the user to auto-open an SDFG if one was generated with a linkfile
+  (.sdfgl file).
+- The DaCe interface now only is automatically started if the optimization
+  pane is opened, not when only an editor is opened.
+- Various smaller UI fixes and overhauls.
+- Performance improvements.
+
+### 0.2.9
+
+- Provide a means to change the port on which the DaCe daemon listens.
+
+### 0.2.8
+
+- Provide a panel for static SDFG analysis.
+- Various UI fixes and overhauls.
+- Improved performance.
+
+### 0.2.7
+
+- Terminal mode for the DaCe backend.
+  - The DaCe interface was moved in to the plugin itself.
+  - The DaCe backend can now be started either silently in the background,
+    or as a terminal process in a new terminal from within VSCode. This is
+    configurable via the workspace settings.
+- The SDFV can now be configured (workspace settings) to be split vertically
+  instead of horizontally.
+- Static analysis overlays:
+  - A static analysis overlay to examine the memory volume in memlets was added.
+    - This overlay visualizes memory movement and indicates hotspots on a color
+      scale.
+  - A static analysis overlay for FLOPS analysis was added.
+    - This overlay visualizes compute time in the form of FLOPS on the graph.
+  - Overlays can be toggled from the main menu inside the SDFV.
+  - Overlays support the definition and subsequent resolution of symbols in
+    symbolic expressions.
+    - Unknown expressions are highlighted in grey, allowing the user to click on
+      the element and define the missing symbols.
+
+### 0.2.6
+
+- Bugfixes.
+
+### 0.2.5
+
+- Added subgraph transformations.
+  - Subgraph Transformations can be listed in the applicable transformations
+    list when the corresponding subgraph is selected and the list is manually
+    refreshed.
+  - Subgraph Transformations get listed as selected transformations.
+- Updated the icon pack.
+- Updated to the latest version of the DaCe webclient.
+  - For details please refer to
+    [the DaCe webclient's github page](https://github.com/spcl/dace-webclient).
+- The custom editor now interacts with the `TextDocument` API in the VSCode-way
+  instead of directly writing to the filesystem.
+
+### 0.2.4
+
+- Improved error reporting for exceptions in DaCe.
+- Allows multi-selection of elements (nodes / edges) in the graph view via
+  Ctrl. + Click or box-select.
+- Now grouping applicable transformations for relevance to the selected
+  elements.
+
+### 0.2.3
+
+- Improved error reporting and recovery.
+- Allows for a retry when the startup of the DaCe backend failed.
+- Clears transformations when the document is changed.
+
 ### 0.2.2
 
 - Fixes missing info contents in the info bar.
